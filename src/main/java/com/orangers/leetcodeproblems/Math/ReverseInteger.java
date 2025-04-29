@@ -41,12 +41,17 @@ public class ReverseInteger {
             sign = -1;
             x*=-1;
         }
-        
+        int prevReversed = 0;
         while(x > 0) {
             int digit = x % 10;
             x/=10;
             r*=10;
             r += digit;
+            // check to see if the reversed would be > integer limit
+            if (r/10 != prevReversed) {
+                return 0;
+            }
+            prevReversed = r;
         }
         return r * sign;
     }
