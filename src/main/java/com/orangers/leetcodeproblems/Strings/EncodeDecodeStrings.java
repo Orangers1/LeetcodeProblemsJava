@@ -1,4 +1,4 @@
-package com.orangers.leetcodeproblems.Arrays;
+package com.orangers.leetcodeproblems.Strings;
 
 import jdk.jshell.spi.ExecutionControl;
 
