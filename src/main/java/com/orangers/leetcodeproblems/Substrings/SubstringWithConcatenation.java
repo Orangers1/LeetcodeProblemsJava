@@ -1,4 +1,4 @@
-package com.orangers.leetcodeproblems;
+package com.orangers.leetcodeproblems.Substrings;
 
 import java.util.ArrayList;
 import java.util.HashMap;

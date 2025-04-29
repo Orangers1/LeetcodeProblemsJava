@@ -1,8 +1,5 @@
-package com.orangers.leetcodeproblems;
+package com.orangers.leetcodeproblems.Merging;
 
-import jdk.jshell.spi.ExecutionControl;
-
-import java.sql.Array;
 import java.util.*;
 
 public class TestMergeKLists {

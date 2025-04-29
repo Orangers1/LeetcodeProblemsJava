@@ -1,4 +1,4 @@
-package com.orangers.leetcodeproblems;
+package com.orangers.leetcodeproblems.Traversal;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,35 +37,4 @@ public class ZigzagGrid {
         }
         return list;
     }
-
-
-    public int lengthOfLongestSubstring(String s) {
-        HashMap<Character, Integer> seenCharacters = new HashMap<>();
-        int maxLength = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-            if(seenCharacters.containsKey(s.charAt(i))) {
-                maxLength = Math.max(maxLength, seenCharacters.size());
-                seenCharacters.clear();
-                seenCharacters.put(s.charAt(i), i);
-            } else {
-                seenCharacters.put(s.charAt(i), i);
-            }
-        }
-        return maxLength;
-    }
-
-
-public boolean isPalindrome(int x) {
-    if (x < 0) {
-        return false;
-    }
-    String number = Integer.toString(x);
-    for(int i = 0; i < number.length()/2; i++) {
-        if(number.charAt(i) != number.charAt(number.length()-i-1)){
-            return false;
-        }
-    }
-    return true;
-}
 }

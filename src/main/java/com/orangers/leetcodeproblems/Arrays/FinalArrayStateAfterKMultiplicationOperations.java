@@ -1,4 +1,4 @@
-package com.orangers.leetcodeproblems;
+package com.orangers.leetcodeproblems.Arrays;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;

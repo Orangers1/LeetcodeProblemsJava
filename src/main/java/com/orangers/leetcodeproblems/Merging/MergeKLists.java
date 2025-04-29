@@ -1,4 +1,4 @@
-package com.orangers.leetcodeproblems;
+package com.orangers.leetcodeproblems.Merging;
 
 
 public class MergeKLists {
