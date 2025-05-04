@@ -1,4 +1,4 @@
-# LeetcodeProblems
+# Leetcode Problems - Java
  Leetcode problems i'm solving in java, using Intelli-J idea as the IDE.
 Problems generally have one class file per problem, organized in directories by problem type.
 
