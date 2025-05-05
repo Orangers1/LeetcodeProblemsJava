@@ -24,15 +24,14 @@ public class ProductsOfArrayExceptSelf {
         }
         product = 1;
         // create suffix product array (i.e. products starting at last and going down including all previous
-        for (int i = nums.length-1; i > 0; i--) {
+        for (int i = nums.length - 1; i > 0; i--) {
             product *= nums[i];
             suffixProducts[i] = product;
         }
         for(int i = 0; i < nums.length; i++) {
-            if(i > 0 && i+1 < nums.length) { // standard case - multiply prefix and suffix
+            if (i > 0 && i + 1 < nums.length) { // standard case - multiply prefix and suffix
                 arr[i] = prefixProducts[i - 1] * suffixProducts[i + 1];
-            }
-            else if (i == 0) { // beginning of loop (just use suffix)
+            } else if (i == 0) { // beginning of loop (just use suffix)
                 arr[i] = suffixProducts[i+1];
             } else { // end of loop (just use prefix)
                 arr[i] = prefixProducts[i-1];
