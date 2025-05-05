@@ -11,15 +11,15 @@ public class EncodeDecodeStrings {
         String encoded = "";
         StringBuilder res = new StringBuilder();
         List<Integer> sizes = new ArrayList<>();
-        for(String str : strs) {
+        for (String str : strs) {
             sizes.add(str.length());
         }
-        for(Integer i : sizes) {
+        for (Integer i : sizes) {
             res.append(i);
             res.append(",");
         }
         res.append("#"); // signal that we're at end of the list of sizes.
-        for(String str : strs) {
+        for (String str : strs) {
             res.append(str);
         }
         return res.toString();

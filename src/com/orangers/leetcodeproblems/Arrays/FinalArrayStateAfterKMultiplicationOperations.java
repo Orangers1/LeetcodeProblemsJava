@@ -5,11 +5,11 @@ import java.util.PriorityQueue;
 import java.lang.Comparable;
 
 public class FinalArrayStateAfterKMultiplicationOperations {
-    public static void main(String[] args){
-        int[] start = {2,1,3,5,6};
+    public static void main(String[] args) {
+        int[] start = {2, 1, 3, 5, 6};
         int k = 5;
         int mult = 2;
-        int[] expected = {8,4,6,5,6};
+        int[] expected = {8, 4, 6, 5, 6};
         FinalArrayState s = new FinalArrayState();
         int[] computed = s.getFinalState(start, k, mult);
         System.out.println("Received: " + Arrays.toString(computed) +
@@ -24,9 +24,10 @@ public class FinalArrayStateAfterKMultiplicationOperations {
      */
 
     private static class FinalArrayState {
-        public FinalArrayState(){
+        public FinalArrayState() {
 
         }
+
         public int[] getFinalState(int[] nums, int k, int multiplier) {
             //o(1) min getting
             // min heap
@@ -37,8 +38,8 @@ public class FinalArrayStateAfterKMultiplicationOperations {
                 assert minimum != null;
                 int minVal = minimum.first;
                 int minIndex = minimum.last;
-                nums[minIndex] = minVal*multiplier;
-                pq.add(new Tuple(minVal*multiplier, minIndex));
+                nums[minIndex] = minVal * multiplier;
+                pq.add(new Tuple(minVal * multiplier, minIndex));
             }
             return nums;
         }

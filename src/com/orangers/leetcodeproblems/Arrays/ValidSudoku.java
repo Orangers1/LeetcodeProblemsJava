@@ -39,8 +39,8 @@ public class ValidSudoku {
             for (int j = 0; j < board[i].length; j++) {
                 if (seenDigits.contains(board[j][i])) {
                     return false;
-                } else{
-                    if(board[j][i] != '.') {
+                } else {
+                    if (board[j][i] != '.') {
                         seenDigits.add(board[j][i]);
                     }
                 }
@@ -48,16 +48,16 @@ public class ValidSudoku {
         }
 
         // if here then columns and rows are valid, now just check the 9 3x3 sub-boxes.
-        for (int i = 0 ; i < 3; i++) { // loop through 3 rows of sub-boxes
+        for (int i = 0; i < 3; i++) { // loop through 3 rows of sub-boxes
             for (int j = 0; j < 3; j++) { // loop through 3 columns of sub-boxes
                 seenDigits.clear();
                 for(int k = 0; k < 3; k++) { // loop through rows of sub-box
                     for (int l = 0; l < 3; l++) { // loop through columns of sub-box
-                        if (seenDigits.contains(board[k+ i*3][l + j*3])) {
+                        if (seenDigits.contains(board[k + i * 3][l + j * 3])) {
                             return false;
                         } else{
-                            if(board[k + i*3][l + j*3] != '.') {
-                                seenDigits.add(board[k+ i*3][l + j*3]);
+                            if (board[k + i * 3][l + j * 3] != '.') {
+                                seenDigits.add(board[k + i * 3][l + j * 3]);
                             }
                         }
                     }

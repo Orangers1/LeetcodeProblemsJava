@@ -8,6 +8,7 @@ public class TopKFrequent {
     class IntegerFrequency implements Comparable<IntegerFrequency> {
         int value;
         public int frequency;
+
         public IntegerFrequency(int value, int frequency){
             this.value = value;
             this.frequency = frequency;
@@ -18,6 +19,7 @@ public class TopKFrequent {
             return i.frequency-this.frequency;
         }
     }
+
     public int[] topKFrequent(int[] nums, int k){
         // structure that associates numbers to their frequency, can return top X of them
         PriorityQueue<IntegerFrequency> queue = new PriorityQueue<>();

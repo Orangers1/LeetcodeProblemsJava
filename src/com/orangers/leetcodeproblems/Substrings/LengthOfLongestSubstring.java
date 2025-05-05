@@ -8,7 +8,7 @@ public class LengthOfLongestSubstring {
         int maxLength = 0;
 
         for (int i = 0; i < s.length(); i++) {
-            if(seenCharacters.containsKey(s.charAt(i))) {
+            if (seenCharacters.containsKey(s.charAt(i))) {
                 maxLength = Math.max(maxLength, seenCharacters.size());
                 seenCharacters.clear();
                 seenCharacters.put(s.charAt(i), i);

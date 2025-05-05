@@ -6,8 +6,8 @@ public class Palindromes {
             return false;
         }
         String number = Integer.toString(x);
-        for(int i = 0; i < number.length()/2; i++) {
-            if(number.charAt(i) != number.charAt(number.length()-i-1)){
+        for (int i = 0; i < number.length() / 2; i++) {
+            if (number.charAt(i) != number.charAt(number.length() - i - 1)) {
                 return false;
             }
         }

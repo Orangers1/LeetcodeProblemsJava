@@ -16,16 +16,20 @@ public class LongestConsecutiveSequence {
         }
         int longest = 1;
         HashSet<Integer> numbers = new HashSet<>();
-        for(int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++){
             numbers.add(i);
         }
+
         HashSet<Integer> sequenceStarts = new HashSet<>();
-        for(int i = 0; i < nums.length; i++) {
-            if(!numbers.contains(nums[i] - 1)) {
-                sequenceStarts.add(nums[i]);
+
+        for (int num : nums) {
+            if (!numbers.contains(num - 1)) {
+                sequenceStarts.add(num);
             }
         }
+
         int currentSequence = 1;
+
         for (Integer i : sequenceStarts) {
             Integer j = i;
             while (numbers.contains(j + 1)) {

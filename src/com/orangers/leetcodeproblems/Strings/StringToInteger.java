@@ -11,29 +11,29 @@ public class StringToInteger {
      */
     public int myAtoi(String s) {
         s = s.strip(); // remove whitespace from front and back
-        if(s.isEmpty()){
+        if (s.isEmpty()) {
             return 0;
         }
         int sign = 1;
         int value = 0;
         int start = 0;
-        if(s.charAt(0) == '-') {
+        if (s.charAt(0) == '-') {
             sign = -1;
             start = 1;
         }
-        if(s.charAt(0) == '+'){
+        if (s.charAt(0) == '+') {
             start = 1;
         }
         int prevInt = 0;
         for (int i = start; i < s.length(); i++) {
             if (s.charAt(i) > '9' || s.charAt(i) < '0') {
-               break;
+                break;
             }
-            value*=10;
+            value *= 10;
 
             value += s.charAt(i) - '0';
-            if(value / 10 != prevInt) {
-                if(sign < 0) {
+            if (value / 10 != prevInt) {
+                if (sign < 0) {
                     return Integer.MIN_VALUE;
                 }
                 else {

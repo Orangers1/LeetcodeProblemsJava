@@ -1,12 +1,15 @@
 package com.orangers.leetcodeproblems.Arrays;
 
 /**
- * problem from neetcode: <a href="https://neetcode.io/problems/products-of-array-discluding-self">can be viewed here</a>
+ * problem from neetcode:
+ * <a href="https://neetcode.io/problems/products-of-array-discluding-self">can be viewed here</a>
  */
 public class ProductsOfArrayExceptSelf {
     /**
-     * returns an array where the elements are the product of the entire array except nums[i] (i.e. input = [1,2,4,6], output = [48,24,12,8]),
-     * problem from neetcode: <a href="https://neetcode.io/problems/products-of-array-discluding-self">can be viewed here</a>
+     * returns an array where the elements are the product of the entire array except nums[i]
+     * (i.e. input = [1,2,4,6], output = [48,24,12,8]),
+     * problem from neetcode:
+     * <a href="https://neetcode.io/problems/products-of-array-discluding-self">can be viewed here</a>
      * @param nums - the input array to use for the product
      * @return an array containing the product of every other element
      *
@@ -32,9 +35,9 @@ public class ProductsOfArrayExceptSelf {
             if (i > 0 && i + 1 < nums.length) { // standard case - multiply prefix and suffix
                 arr[i] = prefixProducts[i - 1] * suffixProducts[i + 1];
             } else if (i == 0) { // beginning of loop (just use suffix)
-                arr[i] = suffixProducts[i+1];
+                arr[i] = suffixProducts[i + 1];
             } else { // end of loop (just use prefix)
-                arr[i] = prefixProducts[i-1];
+                arr[i] = prefixProducts[i - 1];
             }
         }
         return arr;

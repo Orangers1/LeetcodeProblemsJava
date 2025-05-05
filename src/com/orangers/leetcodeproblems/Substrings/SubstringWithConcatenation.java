@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SubstringWithConcatenation {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         int x = reverseInt(365);
         int y = reverseInt(-12);
@@ -17,6 +17,7 @@ public class SubstringWithConcatenation {
         System.out.println(Integer.MAX_VALUE + " reversed to: " + z);
 
     }
+
     /*
    All strings of words are of same length
    concatenated string conta    ins all strings of any permutation of words concatenated
@@ -31,23 +32,23 @@ public class SubstringWithConcatenation {
         int individualWordLength = words[0].length();
         int substringLength = words.length * individualWordLength;
 
-        for(String st : words){
-            wordSet.put(st, wordSet.getOrDefault(st,0) + 1);
+        for (String st : words) {
+            wordSet.put(st, wordSet.getOrDefault(st, 0) + 1);
         }
 
-        for(int i = 0; i < s.length()+1 - substringLength; i++){
+        for (int i = 0; i < s.length() + 1 - substringLength; i++) {
             HashMap<String, Integer> temp = new HashMap<>();
             int count = 0;
-            for(int j = i, k = i; j+individualWordLength <= s.length(); j = j + individualWordLength) {
+            for (int j = i, k = i; j + individualWordLength <= s.length(); j = j + individualWordLength) {
                 String word = s.substring(j, j + individualWordLength);
-                temp.put(word, temp.getOrDefault(word,0)+1);
+                temp.put(word, temp.getOrDefault(word, 0) + 1);
                 count++;
 
-                if(count==words.length){
-                    if(wordSet.equals(temp))
+                if (count == words.length) {
+                    if (wordSet.equals(temp))
                         Answer.add(k);
                 }
-                String remove = s.substring(k, k+individualWordLength);
+                String remove = s.substring(k, k + individualWordLength);
                 temp.computeIfPresent(remove, (a, b) -> (b > 1) ? b - 1 : null);
                 count--;
                 k = k + individualWordLength;
@@ -58,53 +59,47 @@ public class SubstringWithConcatenation {
     }
 
 
-
-
     private static int reverseInteger(int x) {
         int reversed = 0;
         int sign = 1;
-        if(x < 0){
+        if (x < 0) {
             sign = -1;
-            x*=-1;
+            x *= -1;
         }
 
         int prevReversed = 0;
-        while (x > 0){
-            reversed*=10;
+        while (x > 0) {
+            reversed *= 10;
             int digit = x % 10;
-            reversed+=digit;
-            x/=10;
+            reversed += digit;
+            x /= 10;
 
-            if(reversed / 10 != prevReversed) {
+            if (reversed / 10 != prevReversed) {
                 return 0;
             }
             prevReversed = reversed;
         }
-        return reversed*sign;
+        return reversed * sign;
     }
 
     private static int reverseInt(int x) {
         int sign = 1;
-        if(x < 0) {
+        if (x < 0) {
             sign = -1;
-            x*=-1;
+            x *= -1;
         }
         String s = Integer.toString(x);
 
-        String rs = "";
-        for (int i = s.length(); i > 0; i--){
-            rs += s.charAt(i-1);
+        StringBuilder rs = new StringBuilder();
+        for (int i = s.length(); i > 0; i--) {
+            rs.append(s.charAt(i - 1));
         }
-        int r = 0;
+        int r;
         try {
-            r = Integer.parseInt(rs);
-        }
-        catch(NumberFormatException e){
+            r = Integer.parseInt(rs.toString());
+        } catch (NumberFormatException e) {
             return 0;
         }
-        return r*sign;
+        return r * sign;
     }
-
-
-
 }
