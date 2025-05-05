@@ -10,19 +10,20 @@ public class LongestConsecutiveSequence {
      * @param nums the array to use to be able to form consecutive sequences
      * @return the length of the longest consecutive sequence of elements that can be formed
      */
-    public int longestConsecutive(int[] nums) {
-        if(nums.length == 0) {
+    public static int longestConsecutive(int[] nums) {
+        if (nums.length == 0) {
             return 0;
         }
         int longest = 1;
         HashSet<Integer> numbers = new HashSet<>();
-        for (int i = 0; i < nums.length; i++){
-            numbers.add(i);
+        for (int k : nums) {
+            numbers.add(k);
         }
 
         HashSet<Integer> sequenceStarts = new HashSet<>();
 
         for (int num : nums) {
+
             if (!numbers.contains(num - 1)) {
                 sequenceStarts.add(num);
             }
@@ -43,5 +44,12 @@ public class LongestConsecutiveSequence {
         }
 
         return longest;
+    }
+
+    public static void main(String[] args) {
+        int[] testArray1 = {2, 20, 4, 10, 3, 4, 5};
+
+        int result = longestConsecutive(testArray1);
+        System.out.println("Result: " + result);
     }
 }
